@@ -1,33 +1,86 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Button, Input, Form } from "antd";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+    const [form] = Form.useForm();
+    const [buttonEnabled, setButtonEnabled] = useState(null)
+    const [captcha, setCaptcha] = useState(Math.floor(Math.random() * 6))
+    console.log(captcha)
+    const startQuiz = () => {
+        alert('Quiz is not ready!')
+        setButtonEnabled(null)
+    }
+    const handleFinish = (values) => {
+        if (values.captcha == 10) {
+            setButtonEnabled(true)
+            return null;
+        } else {
+
+            alert( `Captcha is wrong . You submitted ${values.captcha}`)
+            return null;
+        }
+    }
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="title">
+        <h1>Welcome to my <span>Quiz</span> (open source)</h1>
+          {buttonEnabled === null &&
+              <div>
+                  <h2 ><span
+                      className='captcha-title-unsolved'
+                  > Are you a robot? Solve captcha :
+                  </span>
+                      {captcha === 0  &&
+                      <Form
+                          form={form}
+                          onFinish={handleFinish}
+                          style={{
+                          }}
+                      >
+                          <Form.Item
+                              name="captcha"
+                              rules={[{
+                                  required: true,
+                                  message: "Please solve captcha!"
+                              }]}
+                          >
+                              <Input
+                                  style={{ backgroundColor: "#fff", color: "#333" }}
+                                  placeholder='Solve captcha 5+5'
+                              />
+                          </Form.Item>
+
+                          <Form.Item
+                              style={{ textAlign: "center" }}
+                          >
+                              <Button
+                                  type="primary"
+                                  style={{ backgroundColor: "#333", borderColor: "#333" }}
+                                  className='antd-button-submit-captcha'
+                                  htmlType="submit"
+                              >
+                                  Submit
+                              </Button>
+                          </Form.Item>
+                      </Form>
+
+                  }{captcha > 0 && setButtonEnabled(true)}
+                  </h2>
+              </div>
+
+          }
+          {buttonEnabled === true &&
+              <Button
+                  className='antd-button-start'
+                  onClick={startQuiz} >
+                  Start quiz!
+              </Button>
+          }
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
