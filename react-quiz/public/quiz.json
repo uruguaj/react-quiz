@@ -1,0 +1,101 @@
+[
+  {
+    "id": 0,
+    "question": "What product did Amazon originally sell?",
+    "answers": [
+      "Electronics",
+      "Food",
+      "Software",
+      "Books"
+    ],
+    "answer": "Books"
+  },
+  {
+    "id": 1,
+    "question": "Threads was launched to rival what social media platform?",
+    "answers": [
+      "FaceBook",
+      "X",
+      "Meta",
+      "Instagram"
+    ],
+    "answer": "X"
+  },
+  {
+    "id": 2,
+    "question": "What is the name of Elon Musk's aerospace company?",
+    "answers": [
+      "Nasa",
+      "Earth",
+      "SpaceX",
+      "Emirates"
+    ],
+    "answer": "SpaceX"
+  },
+  {
+    "id": 3,
+    "question": "Which programming language is often used for building web applications?",
+    "answers": [
+      "Python",
+      "Java",
+      "C#",
+      "JavaScript"
+    ],
+    "answer": "JavaScript"
+  },
+  {
+    "id": 4,
+    "question": "What does HTML stand for in web development?",
+    "answers": [
+      "Hyper Text Markup Language",
+      "Highly Typed Markup Language",
+      "Home Tool Markup Language",
+      "Hyper Transfer Markup Language"
+    ],
+    "answer": "Hyper Text Markup Language"
+  },
+  {
+    "id": 5,
+    "question": "React is a JavaScript library for building what type of user interfaces?",
+    "answers": [
+      "Command-line interfaces",
+      "Graphical user interfaces",
+      "Virtual reality interfaces",
+      "Natural language interfaces"
+    ],
+    "answer": "Graphical user interfaces"
+  },
+  {
+    "id": 6,
+    "question": "Which React hook is used to perform side effects in functional components?",
+    "answers": [
+      "useEffect",
+      "useSideEffect",
+      "useLifecycle",
+      "useRender"
+    ],
+    "answer": "useEffect"
+  },
+  {
+    "id": 7,
+    "question": "Redux is a state management library often used with which front-end framework?",
+    "answers": [
+      "Angular",
+      "Vue.js",
+      "React",
+      "Ember"
+    ],
+    "answer": "React"
+  },
+  {
+    "id": 8,
+    "question": "What does JSX stand for in the context of React?",
+    "answers": [
+      "JavaScript XML",
+      "Java XML",
+      "JSON XML",
+      "JavaScript XSL"
+    ],
+    "answer": "JavaScript XML"
+  }
+]

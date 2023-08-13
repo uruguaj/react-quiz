@@ -1,16 +1,19 @@
 import { useState } from 'react'
 import './App.css'
 import { Button, Input, Form } from "antd";
+import {Link, Navigate, useNavigate} from "react-router-dom"
 
 function App() {
 
     const [form] = Form.useForm();
     const [buttonEnabled, setButtonEnabled] = useState(null)
+    const [quizStarted, setQuizStarted] = useState(false)
     const [captcha, setCaptcha] = useState(Math.floor(Math.random() * 6))
     console.log(captcha)
+
+    const navigate = useNavigate()
     const startQuiz = () => {
-        alert('Quiz is not ready!')
-        setButtonEnabled(null)
+        navigate('/quiz')
     }
     const handleFinish = (values) => {
         if (values.captcha == 10) {
@@ -25,7 +28,9 @@ function App() {
 
 
   return (
-    <>
+      <div className='front-page-all' style={{}}>
+    <div className='front-page'>
+        {quizStarted === false &&
       <div className="title">
         <h1>Welcome to my <span>Quiz</span> (open source)</h1>
           {buttonEnabled === null &&
@@ -76,12 +81,14 @@ function App() {
           {buttonEnabled === true &&
               <Button
                   className='antd-button-start'
-                  onClick={startQuiz} >
+                  onClick={startQuiz}
+                  >
                   Start quiz!
               </Button>
           }
+      </div>}
+    </div>
       </div>
-    </>
   )
 }
 
