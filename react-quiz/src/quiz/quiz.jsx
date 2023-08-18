@@ -85,9 +85,11 @@ const Quiz = () => {
                     </Radio.Group>
 
                     {currentQuestion < quiz.length - 1 ? (
-                        <Button onClick={handleNext}>Next</Button>
+                        <Button onClick={handleNext} disabled={userAnswers[currentQuestion] === null} style={{ backgroundColor: "white" }}>
+                            Next
+                        </Button>
                     ) : (
-                        <Button onClick={handleComplete} style={{backgroundColor:"white"}} disabled={userAnswers[currentQuestion] === null}>
+                        <Button onClick={handleComplete} style={{ backgroundColor: "white" }} disabled={userAnswers[currentQuestion] === null}>
                             Complete
                         </Button>
                     )}
@@ -98,3 +100,6 @@ const Quiz = () => {
 }
 
 export default Quiz;
+
+
+
