@@ -71,7 +71,7 @@ const Quiz = () => {
                     // subTitle={`Your score: ${calculatePercentage()}%`}
                 />
                     <h2>Quiz Completed!</h2>
-                    <h1>Your score: {calculatePercentage()} %</h1>
+                    <h1>Your score: {Math.round(calculatePercentage() * 100)/100} %</h1>
                 <Button type="primary" onClick={() => location.reload()
                 }>Start again?</Button>
                 </div>
